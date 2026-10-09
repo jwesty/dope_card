@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DOPE Card Generator</title><link rel="stylesheet" href="style.css">
+</head>
+<body><main><header><h1>DOPE Card Generator</h1><p>Seven-row ballistics card for 2.7-inch Waveshare NFC e-paper.</p></header>
+<section class="panel"><h2>Rifle profile</h2><div class="fields">
+<label>Card title<input id="title" maxlength="26" value="LUCILLE"></label>
+<label>Ammunition<input id="ammo" maxlength="28" value="PMC 55GR"></label>
+<label>Zero (yards)<input id="zero" type="number" min="0" value="100"></label>
+<label>Units<select id="units"><option>MOA</option><option>MIL</option></select></label>
+</div><h2>DOPE values</h2><p class="hint">Enter your verified holds. Seven rows are available; leave unused cells blank.</p><div class="table-scroll"><table id="editor"><thead><tr><th>Yards</th><th>Elevation</th><th>5 mph wind</th><th>10 mph wind</th></tr></thead><tbody></tbody></table></div>
+<div class="actions"><button id="saveJson">Save JSON</button><label class="upload">Load JSON<input id="loadJson" type="file" accept=".json,application/json" hidden></label><button id="reset" class="secondary">Clear values</button></div></section>
+<section class="panel"><h2>Display preview</h2><p class="hint">Landscape preview, 264 × 176 pixels. Downloads preserve this layout.</p><div class="preview"><canvas id="preview" width="264" height="176" aria-label="E-paper card preview"></canvas></div><div class="actions"><button id="downloadPng">Download PNG (phone)</button><button id="downloadBmp">Download 1-bit BMP (UART)</button></div><p class="hint">BMP is 176 × 264, rotated 90° and encoded as 1-bit monochrome for the Waveshare reader. The PNG is landscape for phone import.</p></section>
+<footer>Card generator only — values are entered by the user, not ballistically calculated.</footer></main><script src="app.js"></script></body></html>
